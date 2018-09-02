@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>公式计算</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <style type="text/css">     
+    .left {     
+      float:left;     
+      display:inline;     
+      width:280px;  
+      margin:20px 40px;    
+      border-style:outset;
+      border-radius:8px; 
+      background:pink; 
+      height:100px;
+    }     
+    .center{     
+      float:left;     
+      display:inline;     
+      width:280px;
+      margin:20px 40px;
+      border-style:outset; 
+      border-radius:8px; 
+      background:#c0f8ff; 
+      height:100px;
+    }     
+    .right{     
+      float:left;     
+      display:inline;     
+      width:280px;
+      margin:20px 40px;
+      border-style:outset; 
+      border-radius:8px; 
+      background:pink; 
+      height:100px;
+    }
+    #wo{
+      border-radius:10px;
+      background-image:url(http://img.51miz.com/Element/00/58/60/87/a320c0ad_E586087_7f32ae77.jpg!/quality/90/unsharp/true/compress/true/format/jpg); 
+      display:flex;
+      flex-direction:column;
+      padding:0;
+      margin:40px;
+      font-size:18px;
+      text-align:center;
+    }
+    #footer {
+      border-radius:9px;
+      height: 40px;
+      line-height: 40px;
+      position: fixed;
+      bottom: 0;
+      width: 90%;
+      text-align: center;
+      background: lightblue;
+      
+      font-family: Arial;
+      font-size: 12px;
+      letter-spacing:1px;
+    }
+  </style> 
+
+
+  <body style="
+               background-image:url(http://pic1.win4000.com/wallpaper/7/55e01c3873758.jpg);
+               background-size: cover;
+               font-family: 'Open Sans',
+               sans-serif;padding: 5px 25px;
+               font-size: 18px;
+               margin: 0; 
+               width:100%;
+               height:100%">
+    <div  id="wo">
+
+      <h1 style="  font-family: 'Merriweather', serif;font-size: 30px;">
+        <img style="weight:45px;height:45px;"src="http://119.23.36.28/labm/pattern/start/logo2.png"/>这是一个title</h1>
+      <p style="color:#ca00ff">公式计算网页
+        <button style="color:red;background:yellow;border-radius:8px;width:70px" id="confire" type="button" title="点击重置网页" onclick="location.reload()">一键恢复</button>
+      </p>
+	      </div>
+   <a style="color:blue;margin: 10px 10px 20px 40px;">功能说明:</a>
+				<a style="background-color:bisque; text-align:center; width:45px; height:30px; text-align:center; border-radius:6px;" href="javascript:divShow();" id="btnhref" class="btn-slide"><b>查看</b></a>
+		  
+    
+	<div style="width:1000px; font-size:20px; background-color:#E4C392; margin:0px auto;border-radius: 10px;" id="show">
+		<div id="btnshow" style="display: none;">
+			<p style="font-size:16px;">
+				功能说明：<br>
+				1. 这里添加网页的<font color="red">功能说明</font><br>
+				
+			</p>
+		</div>
+	</div>
+
+    <div style="width:100%;height:100%">
+      <div class="left">
+        <b style="color:#1ABC9C">1.加法计算</b>
+        <div style="float:center;
+                    margin:10px;">
+          <input style="border-radius:8px;width:90px" type="text" id="name1" placeholder=" 输入检索条件" />
+          +
+          <input style="border-radius:8px;width:90px" type="text" id="name2" placeholder=" 输入检索条件" />
+          =
+          <span disabled="true" id="name3" />
+        </div>
+        <div style="float:center;
+                    margin:10px;">
+          <button style="color:red;background:yellow;border-radius:8px;" id="confire" type="button" onclick="getvalue();">计算</button>
+          <button style="color:red;background:yellow;border-radius:8px;" id="confire" type="button" title="点击清空计算条件" onclick="reload();">恢复</button>
+        </div>
+      </div>
+
+      <div class="center">
+        <b style="color:#1ABC9C">2.xx公式计算</b>
+        <div style="float:center;
+                    margin:10px;">
+          <input style="border-radius:8px;width:90px" type="text" id="" placeholder=" 输入检索条件" />
+          +
+          <input style="border-radius:8px;width:90px" type="text" id="" placeholder=" 输入检索条件" />
+          =
+          <span disabled="true" id="" />
+        </div>
+        <div style="float:center;
+                    margin:10px;">
+          <button style="color:red;background:yellow;border-radius:8px;" id="" type="button" onclick="getvalue();">计算</button>
+          <button style="color:red;background:yellow;border-radius:8px;" id="" type="button" title="点击清空计算条件" onclick="reload();">恢复</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <b style="color:#1ABC9C">3.xx公式计算</b>
+        <div style="float:center;
+                    margin:10px;">
+          <input style="border-radius:8px;width:90px" type="text" id="" placeholder=" 输入检索条件" />
+          +
+          <input style="border-radius:8px;width:90px" type="text" id="" placeholder=" 输入检索条件" />
+          =
+          <span disabled="true" id=""/>
+        </div>
+        <div style="float:center;
+                    margin:10px;">
+          <button style="color:red;background:yellow;border-radius:8px;" id="" type="button" onclick="getvalue();">计算</button>
+          <button style="color:red;background:yellow;border-radius:8px;" id="" type="button" title="点击清空计算条件" onclick="reload();">恢复</button>
+        </div>
+      </div>
+	  
+	  <div class="left">
+        <b style="color:#1ABC9C">4.公式计算</b>
+        <div style="float:center;
+                    margin:10px;">
+          <input style="border-radius:8px;width:90px" type="text" id="name1" placeholder=" 输入检索条件" />
+          +
+          <input style="border-radius:8px;width:90px" type="text" id="name2" placeholder=" 输入检索条件" />
+          =
+          <span disabled="true" id="name3" />
+        </div>
+        <div style="float:center;
+                    margin:10px;">
+          <button style="color:red;background:yellow;border-radius:8px;" id="confire" type="button" onclick="getvalue();">计算</button>
+          <button style="color:red;background:yellow;border-radius:8px;" id="confire" type="button" title="点击清空计算条件" onclick="reload();">恢复</button>
+        </div>
+      </div>
+	  
+	  <div class="left">
+        <b style="color:#1ABC9C">5.公式计算</b>
+        <div style="float:center;
+                    margin:10px;">
+          <input style="border-radius:8px;width:90px" type="text" id="name1" placeholder=" 输入检索条件" />
+          +
+          <input style="border-radius:8px;width:90px" type="text" id="name2" placeholder=" 输入检索条件" />
+          =
+          <span disabled="true" id="name3" />
+        </div>
+        <div style="float:center;
+                    margin:10px;">
+          <button style="color:red;background:yellow;border-radius:8px;" id="confire" type="button" onclick="getvalue();">计算</button>
+          <button style="color:red;background:yellow;border-radius:8px;" id="confire" type="button" title="点击清空计算条件" onclick="reload();">恢复</button>
+        </div>
+      </div>
+	  
+	  <div class="left">
+        <b style="color:#1ABC9C">6.公式计算</b>
+        <div style="float:center;
+                    margin:10px;">
+          <input style="border-radius:8px;width:90px" type="text" id="name1" placeholder=" 输入检索条件" />
+          +
+          <input style="border-radius:8px;width:90px" type="text" id="name2" placeholder=" 输入检索条件" />
+          =
+          <span disabled="true" id="name3" />
+        </div>
+        <div style="float:center;
+                    margin:10px;">
+          <button style="color:red;background:yellow;border-radius:8px;" id="confire" type="button" onclick="getvalue();">计算</button>
+          <button style="color:red;background:yellow;border-radius:8px;" id="confire" type="button" title="点击清空计算条件" onclick="reload();">恢复</button>
+        </div>
+      </div>
+	</div>
+
+
+    <div id="footer">©2018 <a href="http://www.myheyufei.com" >adaptの小站</a>/Theme by <a href="http://www.myheyufei.com" target="_blank">heyufei</a> </div>
+  </body>
+
+  <script type="text/javascript">
+    function getvalue()
+    {
+      var name1 = document.getElementById("name1").value;
+      //alert(name1);
+      var name2 = document.getElementById("name2").value;
+      //alert(name2);
+      if (name1==""||name2==""){alert("请正确输入计算条件！");return;}
+      if (isNaN(name1) ==true||isNaN(name2) ==true){alert("请正确输入计算条件！");return;}
+      var value1 = parseFloat(name1) + parseFloat(name2);
+      var demoP=document.getElementById("name3");
+      demoP.innerHTML=value1;
+    }
+    function reload()
+    {
+      var name1 = document.getElementById("name1");
+      name1.value = "";
+      var name2 = document.getElementById("name2");
+      name2.value = "";
+      var value1 = document.getElementById("name3");
+      value1.innerHTML = "";
+      //location.reload();
+    }
+	
+	function divShow(){
+		document.getElementById("btnshow").style.display="block";
+		document.getElementById("btnhref").innerHTML ="隐藏";
+		document.getElementById("btnhref").href ="javascript:divhidden()";
+		}
+	function divhidden(){
+		document.getElementById("btnshow").style.display="none";
+		document.getElementById("btnhref").innerHTML ="查看";
+		document.getElementById("btnhref").href ="javascript:divShow()"; 
+		}
+
+  </script>
+</html>
